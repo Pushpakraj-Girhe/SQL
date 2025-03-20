@@ -1,0 +1,9 @@
+SELECT DISTINCT CITY 
+FROM STATION 
+WHERE NOT LEFT(CITY, 1) IN ('A', 'E', 'I', 'O', 'U')
+  AND NOT RIGHT(CITY, 1) IN ('A', 'E', 'I', 'O', 'U');
+
+LEFT(CITY, 1) extracts the first character of the city name.
+RIGHT(CITY, 1) extracts the last character of the city name.
+NOT IN ('A', 'E', 'I', 'O', 'U') excludes cities that start or end with a vowel.
+AND ensures that both conditions are satisfied.
