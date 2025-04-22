@@ -1,0 +1,44 @@
+🛠️ SQL SYNTAX EXPLAINED
+Here’s the full query again with explanation:
+
+sql
+Copy
+Edit
+SELECT 
+    CASE 
+        WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+        WHEN A = B AND B = C THEN 'Equilateral'
+        WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+        ELSE 'Scalene'
+    END AS TriangleType
+FROM TRIANGLES;
+💡 Explanation by parts:
+🔹 SELECT
+It’s used to retrieve data from a table.
+
+🔹 CASE
+This is like an IF-ELSE ladder in SQL.
+
+sql
+Copy
+Edit
+CASE
+  WHEN <condition1> THEN <value1>
+  WHEN <condition2> THEN <value2>
+  ...
+  ELSE <default_value>
+END
+🔹 WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+This checks for invalid triangles.
+
+🔹 WHEN A = B AND B = C THEN 'Equilateral'
+All sides are equal.
+
+🔹 WHEN A = B OR B = C OR A = C THEN 'Isosceles'
+Any two sides are equal.
+
+🔹 ELSE 'Scalene'
+This is the default case when none of the above match — means all sides are different.
+
+🔹 AS TriangleType
+Gives a name to the output column.
